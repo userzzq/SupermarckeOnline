@@ -12,7 +12,7 @@ public abstract class BaseAop {
   /**
    * -控制器切面
    */
-  @Pointcut("execution(public * top.huhuiyu.springbootmybatisbase.controller..*.*(..))")
+  @Pointcut("execution(public * top.wfzzq.supermarckeonline.controller..*.*(..))")
   public void controllerPointcut() {
   }
 
