@@ -4,9 +4,9 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
   <typeAliases>
-    <package name="top.huhuiyu.springbootmybatisbase.entity" />
+    <package name="top.wfzzq.supermarckeonline.entity" />
   </typeAliases>
   <mappers>
-    <package name="top.huhuiyu.springbootmybatisbase.dao" />
+    <package name="top.wfzzq.supermarckeonline.dao" />
   </mappers>
 </configuration>

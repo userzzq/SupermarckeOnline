@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- TbToken mapper -->
-<mapper namespace="top.huhuiyu.springbootmybatisbase.dao.TbTokenDAO">
+<mapper namespace="top.wfzzq.supermarckeonline.dao.TbTokenDAO">
   <!-- 新增token -->
   <insert id="addToken" parameterType="TbToken">
     insert into TbToken(token,lastupdate) values(#{token},now())

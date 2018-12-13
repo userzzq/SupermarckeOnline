@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- TbToken mapper -->
-<mapper namespace="top.huhuiyu.springbootmybatisbase.dao.TbTokenInfoDAO">
+<mapper namespace="top.wfzzq.supermarckeonline.dao.TbTokenInfoDAO">
   <!-- 图片校验码相关 -->
   <select id="queryImageCodeByToken" parameterType="TbTokenInfo" resultType="TbTokenInfo">
     select token,infokey,info,lastupdate from TbTokenInfo where token=#{token} and infokey='imagecode'

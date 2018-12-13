@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 测试用mapper -->
-<mapper namespace="top.huhuiyu.springbootmybatisbase.dao.TestDAO">
+<mapper namespace="top.wfzzq.supermarckeonline.dao.TestDAO">
 
   <select id="queryTokens" resultType="TbToken">
     select token,lastupdate from TbToken
