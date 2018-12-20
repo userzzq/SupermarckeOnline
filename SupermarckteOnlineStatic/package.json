@@ -1,11 +1,11 @@
 {
-  "name": "angularjs.base",
-  "version": "1.0.0.1",
+  "name": "supermarcktonline",
+  "version": "1.0.0.0",
   "description": "angularjs基础项目",
-  "author": "胡辉煜",
+  "author": "zzq",
   "repository": {
     "type": "git",
-    "url": "https://github.com/huhuiyu/angularjs-base.git"
+    "url": "https://github.com/zhengwanghuiqiang/Supermarckonline.git"
   },
   "license": "Apache-2.0",
   "dependencies": {
