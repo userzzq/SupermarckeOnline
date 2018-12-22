@@ -16,18 +16,16 @@ public class TbSubTypeModel extends BasePageModel{
      */
     private static final long serialVersionUID = 5895127015197781647L;
     
-    private TbSubType tbSubType=new TbSubType();
-     
-    public TbSubTypeModel(){
-        
+    private TbSubType subType = new TbSubType();
+
+    public TbSubTypeModel() {
     }
 
-    public TbSubType getTbSubType() {
-        return tbSubType;
+    public TbSubType getSubType() {
+      return subType;
     }
 
-    public void setTbSubType(TbSubType tbSubType) {
-        this.tbSubType = tbSubType;
+    public void setSubType(TbSubType subType) {
+      this.subType = subType;
     }
-    
 }

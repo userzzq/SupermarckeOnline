@@ -11,7 +11,7 @@
     });
 
     $scope.formdata = DialogService.getCustomData();
-
+    
     $scope.query = function () {
       DialogService.showWait('数据查询中，请稍候...');
       DataService.send('/type/queryByKey', {

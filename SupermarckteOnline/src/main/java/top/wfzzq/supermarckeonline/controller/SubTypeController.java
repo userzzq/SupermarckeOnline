@@ -7,7 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 import top.wfzzq.supermarckeonline.model.TbSubTypeModel;
 import top.wfzzq.supermarckeonline.service.SubTypeService;
 import top.wfzzq.supermarckeonline.utils.JsonMessage;
-
+/**
+ * 
+ * @author wanghui
+ *
+ */
 @RestController
 @RequestMapping("/subtype")
 public class SubTypeController {

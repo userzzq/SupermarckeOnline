@@ -52,7 +52,7 @@ public interface TypeService {
      * @throws Exception 处理发生异常
      */
     JsonMessage update(TbTypeModel model) throws Exception;
-
+     
     /**
      * -不删除
      * @param model

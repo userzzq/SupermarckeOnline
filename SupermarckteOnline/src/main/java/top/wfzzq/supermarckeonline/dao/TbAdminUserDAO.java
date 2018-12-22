@@ -4,7 +4,6 @@ package top.wfzzq.supermarckeonline.dao;
 import org.apache.ibatis.annotations.Mapper;
 
 import top.wfzzq.supermarckeonline.entity.TbAdminUser;
-import top.wfzzq.supermarckeonline.entity.TbSubType;
 import top.wfzzq.supermarckeonline.entity.TbTokenInfo;
 
 

@@ -1,7 +1,5 @@
 package top.wfzzq.supermarckeonline.dao;
 
-
-
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -14,14 +12,17 @@ import top.wfzzq.supermarckeonline.entity.TbType;
  * @author wanghui
  *
  */
+
 @Mapper
 public interface TbSubTypeDAO {
+    
     /**
      * 查询可用的TbType
      * 
      * @return 可用的TbType
      * @throws Exception 处理发生异常
      */
+    
     List<TbType> queryTypes() throws Exception;
 
     /**
@@ -30,7 +31,27 @@ public interface TbSubTypeDAO {
      * @return 小类信息
      * @throws Exception 处理发生异常
      */
+    
     List<TbSubType> queryAll() throws Exception;
+
+    /**
+     * 按照tid和subName查询小类信息
+     * 
+     * @param tbSubType 小类信息
+     * @return 小类信息
+     * @throws Exception 处理发生异常
+     */
+    TbSubType queryByTidSubName(TbSubType tbSubType) throws Exception;
+
+    /**
+     * 按照主键查询小类信息
+     * 
+     * @param tbSubType 小类信息
+     * @return 小类信息
+     * @throws Exception 处理发生异常
+     */
+    TbSubType queryByKey(TbSubType tbSubType) throws Exception;
+
 
     /**
      * 添加小类信息

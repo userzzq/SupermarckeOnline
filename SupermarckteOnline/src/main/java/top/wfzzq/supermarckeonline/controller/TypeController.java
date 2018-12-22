@@ -35,7 +35,7 @@ public class TypeController {
         // /type/queryByKey?
          return typeService.queryByKey(model);
     }
-    //
+        
     @RequestMapping("/undelete")
     public JsonMessage undelete(TbTypeModel model) throws Exception{
          return typeService.undelete(model);

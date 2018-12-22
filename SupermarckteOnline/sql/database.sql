@@ -57,4 +57,5 @@ create table TbSubType
    subInfo varchar(208) not null comment '分类描述',
    isEnable enum('y','n') default 'y' comment '是否启用. y:默认，启用，n:停用',
    lastupdate timestamp default now() comment '最后更新时间'
+   constraint uniqueTbSubType unique(tid.subName)
 );

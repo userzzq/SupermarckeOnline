@@ -1,6 +1,6 @@
 package top.wfzzq.supermarckeonline.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
 import top.wfzzq.supermarckeonline.base.BaseEntity;
 

@@ -26,10 +26,10 @@ body {
 }
 
 /*表格默认样式*/
-.table td,
+.ng-scope .table td,
 th {
   text-align: center;
-  vertical-align: middle'
+  vertical-align: middle;
 
 }
 
