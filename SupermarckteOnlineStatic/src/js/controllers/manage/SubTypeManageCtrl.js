@@ -11,7 +11,7 @@
     });
     $scope.page = {
       pageNumber: 1,
-      pageSize: 5
+      pageSize: 4
     };
     $scope.query = function () {
       DialogService.showWait('数据查询中。请稍后。。。');
