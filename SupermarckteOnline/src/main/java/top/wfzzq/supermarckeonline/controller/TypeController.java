@@ -1,9 +1,13 @@
 package top.wfzzq.supermarckeonline.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import top.wfzzq.supermarckeonline.aop.NeedAdminUser;
+import top.wfzzq.supermarckeonline.entity.TbAdminUser;
 import top.wfzzq.supermarckeonline.model.TbTypeModel;
 import top.wfzzq.supermarckeonline.service.TypeService;
 import top.wfzzq.supermarckeonline.utils.JsonMessage;
@@ -15,12 +19,16 @@ import top.wfzzq.supermarckeonline.utils.JsonMessage;
  */
 @RestController
 @RequestMapping("/type")
-public class TypeController {
+public class TypeController implements NeedAdminUser{
+    
+    private static final Logger log = LoggerFactory.getLogger(TypeController.class);
+
     @Autowired
     private TypeService typeService;
     
     @RequestMapping("/queryAll")
     public JsonMessage queryAll(TbTypeModel model) throws Exception{
+        log.debug(String.format("用户信息: %s",user));
         return typeService.queryAll(model);
     }
     @RequestMapping("/add")
@@ -50,4 +58,16 @@ public class TypeController {
     public JsonMessage update(TbTypeModel model) throws Exception{
         return typeService.update(model);
     }
+    //登录用户信息=============================================================
+    private TbAdminUser user;
+    @Override
+    public TbAdminUser getUser() {
+      return user;
+    }
+
+    @Override
+    public void setUser(TbAdminUser user) {
+      this.user = user;
+    }
+    //登录用户信息==========================================================
 }

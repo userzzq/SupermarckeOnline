@@ -1,4 +1,4 @@
-<div class="manage-index" ng-controller="">
+<div class="manage-index" ng-controller="MangeIndexCtrl">
   <div class="main">
     <div class="panel panel-primary">
       <div class="panel-heading">
@@ -10,19 +10,19 @@
             <span class="input-group-addon">
               <i class="iconfont">&#xe63c;</i>
             </span>
-            <input type="text" class="form-control" placeholder="请输入用户名">
+            <input type="text" class="form-control" placeholder="请输入用户名" ng-model="formdata.username" autocomplete="off">
           </div>
           <div class="input-group">
             <span class="input-group-addon">
               <i class="iconfont">&#xe714;</i>
             </span>
-            <input type="password" class="form-control" placeholder="请输入密码">
+            <input type="password" class="form-control" placeholder="请输入密码" ng-model="formdata.password" autocomplete="off">
           </div>
         </div>
       </div>
       <div class="panel-footer text-center">
-        <span class="btn btn-info "><i class="iconfont">&#xe680;</i> 登录</span>
-        <span class="btn btn-info"><i class="iconfont">&#xe62a;</i> 重置</span>
+        <span class="btn btn-info " ng-click="login();"><i class="iconfont">&#xe680;</i> 登录</span>
+        <span class="btn btn-info"  ng-click="formdata={};"><i class="iconfont">&#xe62a;</i> 重置</span>
       </div>
     </div>
 
