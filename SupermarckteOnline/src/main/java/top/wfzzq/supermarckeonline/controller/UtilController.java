@@ -8,9 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import top.wfzzq.supermarckeonline.entity.TbTokenInfo;
+import top.wfzzq.supermarckeonline.model.ConfigModel;
 import top.wfzzq.supermarckeonline.model.UtilModel;
+import top.wfzzq.supermarckeonline.service.TbConfigService;
 import top.wfzzq.supermarckeonline.service.UtilService;
 import top.wfzzq.supermarckeonline.utils.ImageCode;
+import top.wfzzq.supermarckeonline.utils.JsonMessage;
 
 /**
  * -工具类控制器
@@ -24,6 +27,8 @@ public class UtilController {
 
   @Autowired
   private UtilService utilService;
+  @Autowired
+  private TbConfigService configService;
 
   @RequestMapping("/validate.jpg")
   public void imageCode(UtilModel model, HttpServletResponse response) throws Exception {
@@ -31,5 +36,8 @@ public class UtilController {
     TbTokenInfo tokenInfo = model.makeTbTokenInfo();
     ImageIO.write(ImageCode.makeImage(utilService.imageCode(tokenInfo)), "jpeg", response.getOutputStream());
   }
-
+  @RequestMapping("/queryWebConfig")
+   public JsonMessage queryWebConfig(ConfigModel model) throws Exception{
+       return configService.queryWebConfig(model);
+   }
 }

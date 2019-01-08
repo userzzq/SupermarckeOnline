@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import top.wfzzq.supermarckeonline.base.BaseAdminUserController;
 import top.wfzzq.supermarckeonline.model.TbSubTypeModel;
 import top.wfzzq.supermarckeonline.service.SubTypeService;
 import top.wfzzq.supermarckeonline.utils.JsonMessage;
@@ -14,7 +15,7 @@ import top.wfzzq.supermarckeonline.utils.JsonMessage;
  */
 @RestController
 @RequestMapping("/subtype")
-public class SubTypeController {
+public class SubTypeController extends BaseAdminUserController{
     @Autowired
     private SubTypeService subTypeService;
 

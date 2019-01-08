@@ -1,5 +1,6 @@
 package top.wfzzq.supermarckeonline.base;
 
+import top.wfzzq.supermarckeonline.entity.TbAdminUser;
 import top.wfzzq.supermarckeonline.entity.TbToken;
 import top.wfzzq.supermarckeonline.entity.TbTokenInfo;
 
@@ -11,44 +12,54 @@ import top.wfzzq.supermarckeonline.entity.TbTokenInfo;
  */
 public abstract class BaseModel extends BaseEntity {
 
-  private static final long serialVersionUID = -9188998793975747208L;
+    private static final long serialVersionUID = -9188998793975747208L;
 
-  /**
-   * token-客户端标识，由服务器端管理，客户端每次都需要提交该数据
-   */
-  private String token;
+    /**
+     * token-客户端标识，由服务器端管理，客户端每次都需要提交该数据
+     */
+    private String token;
 
-  public BaseModel() {
-  }
+    public BaseModel() {
+    }
 
-  public String getToken() {
-    return token;
-  }
+    public String getToken() {
+        return token;
+    }
 
-  public void setToken(String token) {
-    this.token = token;
-  }
+    public void setToken(String token) {
+        this.token = token;
+    }
 
-  /**
-   * getToken的委托方法，将客户端获取的token信息转递给TbToken对象
-   *
-   * @return
-   */
-  public TbToken makeTbToken() {
-    TbToken tbToken = new TbToken();
-    tbToken.setToken(token);
-    return tbToken;
-  }
+    /**
+     * getToken的委托方法，将客户端获取的token信息转递给TbToken对象
+     *
+     * @return
+     */
+    public TbToken makeTbToken() {
+        TbToken tbToken = new TbToken();
+        tbToken.setToken(token);
+        return tbToken;
+    }
 
-  /**
-   * getToken的委托方法，将客户端获取的token信息转递给TbTokenInfo对象
-   *
-   * @return
-   */
-  public TbTokenInfo makeTbTokenInfo() {
-    TbTokenInfo info = new TbTokenInfo();
-    info.setToken(token);
-    return info;
-  }
+    /**
+     * getToken的委托方法，将客户端获取的token信息转递给TbTokenInfo对象
+     *
+     * @return
+     */
+    public TbTokenInfo makeTbTokenInfo() {
+        TbTokenInfo info = new TbTokenInfo();
+        info.setToken(token);
+        return info;
+    }
+
+    private TbAdminUser tbAdminUser;
+
+    public TbAdminUser getTbAdminUser() {
+        return tbAdminUser;
+    }
+
+    public void setTbAdminUser(TbAdminUser tbAdminUser) {
+        this.tbAdminUser = tbAdminUser;
+    }
 
 }

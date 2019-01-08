@@ -5,7 +5,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import top.wfzzq.supermarckeonline.dao.TbAdminUserDAO;
+import top.wfzzq.supermarckeonline.dao.TbLogsDAO;
 import top.wfzzq.supermarckeonline.entity.TbAdminUser;
+import top.wfzzq.supermarckeonline.entity.TbLogs;
 import top.wfzzq.supermarckeonline.entity.TbTokenInfo;
 import top.wfzzq.supermarckeonline.model.AdminUserModel;
 import top.wfzzq.supermarckeonline.service.AdminUserService;
@@ -23,6 +25,8 @@ public class AdminUserServiceImpl implements AdminUserService {
     private static final String USER_ISENABLE="y";
     @Autowired
     private TbAdminUserDAO tbAdminUserDAO;
+    @Autowired
+    private TbLogsDAO tbLogsDAO;
 
     @Override
     public JsonMessage login(AdminUserModel model) throws Exception {
@@ -53,6 +57,13 @@ public class AdminUserServiceImpl implements AdminUserService {
             tbAdminUserDAO.deleteTokenUser(tokenInfo);
         }
         tbAdminUserDAO.saveUserToToken(tokenInfo);
+        //记录登录信息
+        TbLogs logs=new TbLogs();
+        //用户id
+        logs.setOperator(tokenInfo.getInfo());
+        logs.setLogtype("login");
+        logs.setLog("用户登录");
+        tbLogsDAO.add(logs);
         return JsonMessage.getSuccess("登陆成功!");
 
     }
