@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- TbToken mapper -->
+<mapper namespace="top.wfzzq.supermarckeonline.dao.TbConfigDAO">
+  <!-- 排序插叙 -->
+  <select id="queryTitle" resultType="TbConfig">
+    select
+    configKey,configValue,lastupdate from TbConfig 
+    where configKey='titles'
+  </select>
+  <update id="updateTitle" parameterType="TbConfig">
+    update TbConfig set
+    configValue=#{configValue},lastupdate=now()
+    where configKey='titles'
+  </update>
+  <select id="queryTokenTimeout" resultType="TbConfig">
+    select
+    configKey,configValue,lastupdate from TbConfig
+    where
+    configKey='token.timeout'
+  </select>
+  <update id="updateTokenTimeout" parameterType="TbConfig">
+    update TbConfig
+    set configValue=#{configValue},lastupdate=now()
+    where
+    configKey='token.timeout'
+  </update>
+</mapper>
